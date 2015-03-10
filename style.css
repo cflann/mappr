@@ -1,0 +1,29 @@
+#meta {
+    width: 400px;
+}
+
+#list {
+    width: 400px;
+}
+
+#map {
+    width: 960px;
+    height: 500px;
+    float: right;
+}
+
+svg {
+  position: relative;
+}
+
+path {
+  fill: #000;
+  fill-opacity: .5;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+path:hover {
+  fill: brown;
+  fill-opacity: .7;
+}
