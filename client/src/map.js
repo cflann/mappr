@@ -1,3 +1,5 @@
+var util = require('./util.js');
+
 // position map at startup
 var map = new L.Map("map", {center: [37.8, -96.9], zoom: 4});
 // set map tiles
@@ -16,7 +18,7 @@ var ids = {};
 var $select = $('#setSelect');
 
 // fill selector with options
-getSets(function(sets) {
+util.getSets(function(sets) {
   _.each(sets, function(set) {
     ids[set.title] = set._id;
     $select.append(set.title);
@@ -25,7 +27,7 @@ getSets(function(sets) {
 
 $select.on('change', function(e) {
   var id = ids[this.val()];
-  getSet(id, function(s) {
+  util.getSet(id, function(s) {
     set = s;
   });
 });

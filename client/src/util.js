@@ -1,4 +1,4 @@
-var geoJSON = function(collection) {
+exports.geoJSON = function(collection) {
   return {
     'type': 'FeatureCollection',
     'features': collection.map(function(point) {
@@ -14,7 +14,7 @@ var geoJSON = function(collection) {
   };
 };
 
-var load = function(collection) {
+exports.load = function(collection) {
   console.log('loading collection...');
   var feature = g.selectAll('circle')
         .data(collection.features)
@@ -37,12 +37,12 @@ var load = function(collection) {
   }
 };
 
-var addPoint = function(point) {
+exports.addPoint = function(point) {
   set.push(point);
   load(geoJSON(set));
 };
 
-var getSets = function(callback) {
+exports.getSets = function(callback) {
   $.ajax({
     method: 'GET',
     url: 'http://localhost:3000/api/dataset',
@@ -55,7 +55,7 @@ var getSets = function(callback) {
   });
 };
 
-var getSet = function(id, callback) {
+exports.getSet = function(id, callback) {
   $.ajax({
     method: 'GET',
     url: 'http://localhost:3000/api/dataset:' + id,
