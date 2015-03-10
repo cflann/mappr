@@ -19,26 +19,44 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  Mappr 
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  Quickly and painlessly visualize simple, location-based data sets.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  Use Mappr to quickly map large sets of geographic data. Whether you are working with addresses or lat/long data, throw it at mapper and watch it come to life through the magic of data visualization.
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  Most data mapping / GIS tools are unnecessarily bloated and difficult to use. Why should you need to navigate some hugely complicated tool such as ArcGIS when all you want to do is make a map of the nearest bomb shelters?
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  Mappr solves this problem by focusing on providing a simple, yet flexible user experience that requires absolutely zero overhead to get started with. Just input your data (one at a time, or as a file), and let Mappr do the rest.
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  Mappr makes it easy for users to get their data out there immediately *and* have it look amazing. It *just works!*
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  Just open up Mappr and start entering in your data, it's as easy as that. You don't even need to signup, though you should ;)
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+  Mappr is awesome! We used it to map our data on US oil spills in a matter of minutes! Doing that the traditional way would have taken much longer and kept us from doing the work that really matters. 
+
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+  Not impressed? Give Mappr a try and let us know what you think!
