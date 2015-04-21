@@ -1,8 +1,10 @@
 var handler = require('./lib/request-handler');
 var cors = require('cors');
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 app.use(cors());
+app.use(bodyParser());
 
 /* Our server is going to expose a RESTful API to allow for easy access of
  user data sets.

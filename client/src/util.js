@@ -1,4 +1,4 @@
-exports.geoJSON = function(collection) {
+var geoJSON = function(collection) {
   return {
     'type': 'FeatureCollection',
     'features': collection.map(function(point) {
@@ -14,8 +14,7 @@ exports.geoJSON = function(collection) {
   };
 };
 
-exports.load = function(collection) {
-  console.log('loading collection...');
+var load = function(collection) {
   var feature = g.selectAll('circle')
         .data(collection.features)
         .enter().append('circle')
@@ -25,11 +24,9 @@ exports.load = function(collection) {
 
   map.on('viewreset', update);
   update();
-  console.log(map.getPanes().overlayPane);
 
   function update() {
     feature.attr('transform', function(d) {
-      console.log('coords:', d.geometry.coordinates);
       return 'translate(' +
         map.latLngToLayerPoint(d.geometry.coordinates).x + ',' +
         map.latLngToLayerPoint(d.geometry.coordinates).y + ')';
@@ -37,12 +34,51 @@ exports.load = function(collection) {
   }
 };
 
-exports.addPoint = function(point) {
+var addPoint = function(point) {
   set.push(point);
   load(geoJSON(set));
+  var data = {
+    id: ids[currentSet],
+    point: point
+  };
+  $.ajax({
+    method: 'POST',
+    url: 'http://localhost:3000/api/point',
+    contentType: 'application/json',
+    data: JSON.stringify(data),
+    success: function(data) {
+      console.log('succesfully posted point!');
+      listPoints();
+    },
+    error: function(err) {
+      console.error(err);
+    }
+  });
 };
 
-exports.getSets = function(callback) {
+var addSet = function(title) {
+  currentSet = title;
+  set = [];
+  $.ajax({
+    method: 'POST',
+    url: 'http://localhost:3000/api/dataset',
+    contentType: 'application/json',
+    data: JSON.stringify({title: title}),
+    success: function(res) {
+      // SHOULD GET BACK SET ID
+      ids[title] = res;
+      console.log('current',currentSet);
+      fillSelector();
+      $select.val(currentSet);
+      $select.trigger('change');
+    },
+    error: function(err) {
+      console.error(err);
+    }
+  })
+};
+
+var getSets = function(callback) {
   $.ajax({
     method: 'GET',
     url: 'http://localhost:3000/api/dataset',
@@ -55,10 +91,10 @@ exports.getSets = function(callback) {
   });
 };
 
-exports.getSet = function(id, callback) {
+var getSet = function(id, callback) {
   $.ajax({
     method: 'GET',
-    url: 'http://localhost:3000/api/dataset:' + id,
+    url: 'http://localhost:3000/api/dataset/' + id,
     success: function(data) {
       callback(data);
     },

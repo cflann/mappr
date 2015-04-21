@@ -1,15 +1,69 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #222222;
+}
+
 #meta {
-    width: 400px;
+    width: 250px;
+    position: relative;
 }
 
 #list {
-    width: 400px;
+    position: relative;
+    margin: 0;
+    width: 250px;
 }
 
 #map {
-    width: 960px;
-    height: 500px;
+    width: 85%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    left: 250px;
+    top: 0;
     float: right;
+}
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  margin-left: 10px;
+  color: #eeeeee;
+}
+
+h2 {
+  margin-left: 10px;
+}
+
+select {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  width: 92%;
+}
+
+.form-control {
+  width: 92%;
+  margin: 10px 10px 10px 10px;
+}
+
+.btn {
+  margin: 0 10px 10px 10px;
+  width: 92%;
+}
+
+.point {
+  margin: 10px;
+  width: 92%;
+  padding: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 3px;
+  background-color: white;
+}
+
+.point:hover {
+  border: 1px solid #cccccc/*rgba(70, 184, 218, 1)*/;
+  border-radius: 3px;
+  background-color: #dddddd/*rgba(91, 192, 222, 1)*/;
 }
 
 svg {

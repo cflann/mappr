@@ -4,6 +4,7 @@
   "description": "A free tool for easy mapping of geographic data sets.",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.12.0",
     "cors": "^2.5.3",
     "express": "^4.12.2",
     "gulp": "^3.8.11",
